@@ -24,3 +24,29 @@ C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.Views.pdb
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csproj.CopyComplete
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Default\Index.cshtml.g.cs
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.deps.json
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.runtimeconfig.json
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.runtimeconfig.dev.json
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.dll
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.pdb
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.Views.dll
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Management_Panel.Views.pdb
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csprojAssemblyReference.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csproj.CoreCompileInputs.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorAssemblyInfo.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorAssemblyInfo.cs
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.AssemblyInfoInputs.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.AssemblyInfo.cs
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.TagHelpers.input.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.TagHelpers.output.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorCoreGenerate.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorTargetAssemblyInfo.cache
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorTargetAssemblyInfo.cs
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.Views.pdb
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.dll
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.pdb
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csproj.CopyComplete
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Default\Index.cshtml.g.cs
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.genruntimeconfig.cache
