@@ -1,8 +1,55 @@
-﻿
+﻿@model List<Management_Panel.Models.Kullanici>
 @{
     ViewData["Title"] = "KullaniciListele";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>KullaniciListele</h2>
-
+<div class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions"></div>
+        <h3 class="panel-title">Kullanıcı Listele</h3>
+    </header>
+    <div class="panel-body">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-hover dataTable table-striped w-full dtr-inline" data-plugin="dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 178px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">İsim</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 244px;" aria-label="Position: activate to sort column ascending">E-mail</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 198px;" aria-label="Office: activate to sort column ascending">Telefon</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 47px;" aria-label="Age: activate to sort column ascending">Ülke</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 106px;" aria-label="Date: activate to sort column ascending">Şehir</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 84px;" aria-label="Salary: activate to sort column ascending">Adres</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">İsim</th>
+                                <th rowspan="1" colspan="1">E-mail</th>
+                                <th rowspan="1" colspan="1">Telefon</th>
+                                <th rowspan="1" colspan="1">Ülke</th>
+                                <th rowspan="1" colspan="1">Şehir</th>
+                                <th rowspan="1" colspan="1">Adres</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var k in Model)
+                            {
+                                <tr>
+                                    <td>@k.name</td>
+                                    <td>@k.mail</td>
+                                    <td>@k.telephone</td>
+                                    <td>@k.country</td>
+                                    <td>@k.province</td>
+                                    <td>@k.address</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

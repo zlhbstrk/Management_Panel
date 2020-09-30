@@ -9,11 +9,9 @@
     <title>Dashboard | Remark Admin Template</title>
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="/global/css/bootstrap.min.css">
     <link rel="stylesheet" href="/global/css/bootstrap-extend.min.css">
     <link rel="stylesheet" href="/assets/css/site.min.css">
-
     <!-- Plugins -->
     <link rel="stylesheet" href="/global/vendor/animsition/animsition.css">
     <link rel="stylesheet" href="/global/vendor/asscrollable/asScrollable.css">
@@ -22,8 +20,13 @@
     <link rel="stylesheet" href="/global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="/global/vendor/flag-icon-css/flag-icon.css">
     <link rel="stylesheet" href="/global/vendor/waves/waves.css">
-    <link rel="stylesheet" href="/assets/examples/css/dashboard/v1.css">
+    <link rel="stylesheet" href="/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="/global/vendor/datatables-fixedheader/dataTables.fixedHeader.css">
+    <link rel="stylesheet" href="/global/vendor/datatables-responsive/dataTables.responsive.css">
+    <link rel="stylesheet" href="/global/vendor/datatables-buttons/dataTables.buttons.css">
+    <link rel="stylesheet" href="/assets/examples/css/tables/datatable.css">
     <!-- Fonts -->
+    <link rel="stylesheet" href="/global/fonts/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="/global/fonts/material-design/material-design.min.css">
     <link rel="stylesheet" href="/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
@@ -160,7 +163,6 @@
                                 <span class="site-menu-title">Kategori</span>
                                 <span class="site-menu-arrow"></span>
                             </a>
-
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
                                     <a class="animsition-link" href="#">
@@ -185,12 +187,11 @@
             </div>
         </div>
     </div>
+
     <!-- Page -->
     <div class="page">
-        <div class="page-content container-fluid">
-            <div class="row" data-plugin="matchHeight" data-by-row="true">
-                @RenderBody()
-            </div>
+        <div class="page-content">
+            @RenderBody()
         </div>
     </div>
     <!-- End Page -->
@@ -201,6 +202,7 @@
             Crafted with <i class="red-600 icon md-favorite"></i> by <a href="#">Hazel</a>
         </div>
     </footer>
+
     <!-- Core  -->
     <script src="/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
     <script src="/global/vendor/jquery/jquery.js"></script>
@@ -217,8 +219,16 @@
     <script src="/global/vendor/intro-js/intro.js"></script>
     <script src="/global/vendor/screenfull/screenfull.js"></script>
     <script src="/global/vendor/slidepanel/jquery-slidePanel.js"></script>
-    <script src="/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
-    <script src="/global/vendor/peity/jquery.peity.min.js"></script>
+    <script src="/global/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/global/vendor/datatables-fixedheader/dataTables.fixedHeader.js"></script>
+    <script src="/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+    <script src="/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="/global/vendor/datatables-buttons/dataTables.buttons.js"></script>
+    <script src="/global/vendor/datatables-buttons/buttons.html5.js"></script>
+    <script src="/global/vendor/datatables-buttons/buttons.flash.js"></script>
+    <script src="/global/vendor/datatables-buttons/buttons.print.js"></script>
+    <script src="/global/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="/global/vendor/bootbox/bootbox.js"></script>
     <!-- Scripts -->
     <script src="/global/js/State.js"></script>
     <script src="/global/js/Component.js"></script>
@@ -233,16 +243,16 @@
     <script src="/global/js/config/colors.js"></script>
     <script src="/assets/js/config/tour.js"></script>
     <script>
-  Config.set('assets', '/assets');
+        Config.set('assets', '../../assets');
     </script>
     <!-- Page -->
     <script src="/assets/js/Site.js"></script>
     <script src="/global/js/Plugin/asscrollable.js"></script>
     <script src="/global/js/Plugin/slidepanel.js"></script>
     <script src="/global/js/Plugin/switchery.js"></script>
-    <script src="/global/js/Plugin/matchheight.js"></script>
-    <script src="/global/js/Plugin/jvectormap.js"></script>
-    <script src="/global/js/Plugin/peity.js"></script>
-    <script src="/assets/examples/js/dashboard/v1.js"></script>
+    <script src="/global/js/Plugin/datatables.js"></script>
+    <script src="/assets/examples/js/tables/datatable.js"></script>
+    <script src="/assets/examples/js/uikit/icon.js"></script>
+
 </body>
 </html>
