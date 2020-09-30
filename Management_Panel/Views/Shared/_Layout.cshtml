@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/global/css/bootstrap.min.css">
     <link rel="stylesheet" href="/global/css/bootstrap-extend.min.css">
     <link rel="stylesheet" href="/assets/css/site.min.css">
+
     <!-- Plugins -->
     <link rel="stylesheet" href="/global/vendor/animsition/animsition.css">
     <link rel="stylesheet" href="/global/vendor/asscrollable/asScrollable.css">
@@ -21,9 +22,6 @@
     <link rel="stylesheet" href="/global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="/global/vendor/flag-icon-css/flag-icon.css">
     <link rel="stylesheet" href="/global/vendor/waves/waves.css">
-    <link rel="stylesheet" href="/global/vendor/chartist/chartist.css">
-    <link rel="stylesheet" href="/global/vendor/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="/assets/examples/css/dashboard/v1.css">
     <!-- Fonts -->
     <link rel="stylesheet" href="/global/fonts/material-design/material-design.min.css">
@@ -39,7 +37,7 @@
     <!-- Scripts -->
     <script src="/global/vendor/breakpoints/breakpoints.js"></script>
     <script>
-  Breakpoints();
+        Breakpoints();
     </script>
 </head>
 <body class="animsition dashboard">
@@ -59,7 +57,7 @@
             </button>
             <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
                 <img class="navbar-brand-logo" src="/assets/images/logo.png" title="Remark">
-                <span class="navbar-brand-text hidden-xs-down"> Remark</span>
+                <span class="navbar-brand-text hidden-xs-down">Balböceği Gıda</span>
             </div>
             <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-search"
                     data-toggle="collapse">
@@ -126,38 +124,63 @@
                 <div>
                     <ul class="site-menu" data-plugin="menu">
                         <li class="site-menu-item active">
-                            <a class="animsition-link" href="index.html">
+                            <a class="animsition-link" href="#">
                                 <i class="site-menu-icon md-view-dashboard" aria-hidden="true"></i>
-                                <span class="site-menu-title">Ana Menü 1</span>
+                                <span class="site-menu-title">Kullanıcı Listele</span>
+                            </a>
+                        </li>
+                        <li class="site-menu-item">
+                            <a class="animsition-link" href="#">
+                                <i class="site-menu-icon md-view-dashboard" aria-hidden="true"></i>
+                                <span class="site-menu-title">Sipariş Listele</span>
                             </a>
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:void(0)">
                                 <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                                <span class="site-menu-title">Ana Menü 2</span>
+                                <span class="site-menu-title">Ürün</span>
                                 <span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
-                                    <a class="animsition-link" href="layouts/menu-collapsed.html">
-                                        <span class="site-menu-title">Alt Menü 1</span>
+                                    <a class="animsition-link" href="#">
+                                        <span class="site-menu-title">Ürün Listele</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a class="animsition-link" href="layouts/menu-expended.html">
-                                        <span class="site-menu-title">Alt Menü 2</span>
-                                    </a>
-                                </li>
-                                <li class="site-menu-item">
-                                    <a class="animsition-link" href="layouts/grids.html">
-                                        <span class="site-menu-title">Alt Menü 3</span>
+                                    <a class="animsition-link" href="#">
+                                        <span class="site-menu-title">Ürün Ekle</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+                        <li class="site-menu-item has-sub">
+                            <a href="javascript:void(0)">
+                                <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                                <span class="site-menu-title">Kategori</span>
+                                <span class="site-menu-arrow"></span>
+                            </a>
 
+                            <ul class="site-menu-sub">
+                                <li class="site-menu-item">
+                                    <a class="animsition-link" href="#">
+                                        <span class="site-menu-title">Kategori Listele</span>
+                                    </a>
+                                </li>
+                                <li class="site-menu-item">
+                                    <a class="animsition-link" href="#">
+                                        <span class="site-menu-title">Kategori Ekle</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="site-menu-item">
+                            <a class="animsition-link" href="#">
+                                <i class="site-menu-icon md-view-dashboard" aria-hidden="true"></i>
+                                <span class="site-menu-title">Kargo Firma Seçeneği</span>
+                            </a>
+                        </li>
                     </ul>
-
                 </div>
             </div>
         </div>
@@ -173,9 +196,9 @@
     <!-- End Page -->
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="site-footer-legal">© 2017 <a href="http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202">Remark</a></div>
+        <div class="site-footer-legal">© 2020 <a href="http://www.balbocegigida.com/">www.balbocegigida.com</a></div>
         <div class="site-footer-right">
-            Crafted with <i class="red-600 icon md-favorite"></i> by <a href="http://themeforest.net/user/amazingSurge">amazingSurge</a>
+            Crafted with <i class="red-600 icon md-favorite"></i> by <a href="#">Hazel</a>
         </div>
     </footer>
     <!-- Core  -->
@@ -194,10 +217,6 @@
     <script src="/global/vendor/intro-js/intro.js"></script>
     <script src="/global/vendor/screenfull/screenfull.js"></script>
     <script src="/global/vendor/slidepanel/jquery-slidePanel.js"></script>
-    <script src="/global/vendor/chartist/chartist.min.js"></script>
-    <script src="/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js"></script>
-    <script src="/global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="/global/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
     <script src="/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
     <script src="/global/vendor/peity/jquery.peity.min.js"></script>
     <!-- Scripts -->
