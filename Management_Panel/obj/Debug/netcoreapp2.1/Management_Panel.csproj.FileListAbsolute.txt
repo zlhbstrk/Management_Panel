@@ -63,3 +63,4 @@ C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunGuncelle.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\KategoriListele.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\KategoriEkle.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kargo\FirmaSecenegi.cshtml.g.cs
