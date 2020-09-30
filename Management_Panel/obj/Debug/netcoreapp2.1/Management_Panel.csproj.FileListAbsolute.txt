@@ -50,3 +50,16 @@ C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\bin\Debu
 C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Default\Index.cshtml.g.cs
 C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Harun Demir\Desktop\yönetim\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.genruntimeconfig.cache
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kullanici\KullaniciListele.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kullanici\KullaniciLogin.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\SiparisListele.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\SiparisDetay.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\SiparisOnayla.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\KargoBilgisiGir.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunListele.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunEkle.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunSil.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\AskiyaAl.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunGuncelle.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\KategoriListele.cshtml.g.cs
+C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\KategoriEkle.cshtml.g.cs
