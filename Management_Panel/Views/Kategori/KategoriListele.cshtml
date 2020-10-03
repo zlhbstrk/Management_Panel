@@ -1,8 +1,43 @@
-﻿
+﻿@model List<Management_Panel.Models.Kategori>
 @{
-    ViewData["Title"] = "KategoriListele";
+    ViewData["Title"] = "KateoriListele";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>KategoriListele</h2>
-
+<div class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions"></div>
+        <h3 class="panel-title">Kategori Listele</h3>
+    </header>
+    <div class="panel-body">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-hover dataTable table-striped w-full dtr-inline" data-plugin="dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 160px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">İsim</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 100px;" aria-label="Reference Name: activate to sort column ascending">Referans İsim</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">İsim</th>
+                                <th rowspan="1" colspan="1">Referans İsim</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var k in Model)
+                            {
+                                <tr>
+                                    <td>@k.name</td>
+                                    <td>@k.refName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

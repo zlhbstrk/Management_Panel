@@ -1,8 +1,67 @@
-﻿
+﻿@model List<Management_Panel.Models.Siparis>
 @{
     ViewData["Title"] = "SiparisListele";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SiparisListele</h2>
-
+<div class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions"></div>
+        <h3 class="panel-title">Sipariş Listele</h3>
+    </header>
+    <div class="panel-body">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-hover dataTable table-striped w-full dtr-inline" data-plugin="dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 160px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">İsim</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 100px;" aria-label="Price: activate to sort column ascending">Telefon</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70px;" aria-label="E-mail: activate to sort column ascending">E-Mail</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Price: activate to sort column ascending">Fiyat</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Date: activate to sort column ascending">Tarih</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Note: activate to sort column ascending">Not</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Address: activate to sort column ascending">Adres</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Province: activate to sort column ascending">Şehir</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Country: activate to sort column ascending">Ülke</th>
+                                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 30px;">Detay</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">İsim</th>
+                                <th rowspan="1" colspan="1">Telefon</th>
+                                <th rowspan="1" colspan="1">E-Mail</th>
+                                <th rowspan="1" colspan="1">Fiyat</th>
+                                <th rowspan="1" colspan="1">Tarih</th>
+                                <th rowspan="1" colspan="1">Not</th>
+                                <th rowspan="1" colspan="1">Adres</th>
+                                <th rowspan="1" colspan="1">Şehir</th>
+                                <th rowspan="1" colspan="1">Ülke</th>
+                                <th rowspan="1" colspan="1">Detay</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var s in Model)
+                            {
+                            <tr>
+                                <td>@s.name</td>
+                                <td>@s.telephone</td>
+                                <td>@s.mail</td>
+                                <td>@s.price</td>
+                                <td>@s.date</td>
+                                <td>@s.note</td>
+                                <td>@s.address</td>
+                                <td>@s.province</td>
+                                <td>@s.country</td>
+                                <td><button type="button" onclick="location.href='SiparisDetay'" class="btn btn-block btn-info waves-effect waves-classic" style="width:30px;">Detay</button></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
