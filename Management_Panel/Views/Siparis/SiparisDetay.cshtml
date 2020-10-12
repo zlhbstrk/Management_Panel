@@ -1,8 +1,86 @@
-﻿
+﻿@model Management_Panel.Models.SiparisDetay
 @{
     ViewData["Title"] = "SiparisDetay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>SiparisDetay</h2>
-
+<div class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions"></div>
+        <h3 class="panel-title">Sipariş Detay Listele</h3>
+    </header>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table">
+                    <tr>
+                        <th scope="row">Ad: </th>
+                        <td>@Model.siparis.name</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Telefon: </th>
+                        <td>@Model.siparis.telephone</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">E-mail: </th>
+                        <td>@Model.siparis.mail</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fiyat: </th>
+                        <td>@Model.siparis.price</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tarih: </th>
+                        <td>@Model.siparis.date</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Not: </th>
+                        <td>@Model.siparis.note</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Adres: </th>
+                        <td>@Model.siparis.address</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Şehir: </th>
+                        <td>@Model.siparis.province</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ülke: </th>
+                        <td>@Model.siparis.country</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Ürün Adı</th>
+                            <th>Ürün Fiyatı</th>
+                            <th>Ürün Miktarı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var u in Model.urunler)
+                        {
+                            <tr>
+                                <td>@u.name</td>
+                                <td>@u.price</td>
+                                <td>@u.quantity</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <th>Toplam Fiyat: @Model.siparis.price</th>
+                </table>
+                @*<button type="button" class="btn btn-block btn-info waves-effect waves-classic" style="width:100px;">Sipariş Onayla</button>*@
+                <form action="SiparisOnayla.cshtml">
+                    <label for="onay">Sipariş Onayla: </label>
+                    <input type="checkbox" id="onay" />
+                </form>
+                <form action="KargoBilgisiGir.cshtml">
+                    <label for="kargoTakip">Kargo Takip No: </label>
+                    <input type="text" id="fname" name="kargoTakip" align="right" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

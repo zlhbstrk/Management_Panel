@@ -23,7 +23,29 @@ namespace Management_Panel.Controllers
         }
         public IActionResult SiparisDetay()
         {
-            return View();
+            Siparis s = new Siparis()
+            {
+                name = "Veli",
+                telephone = "5555555555",
+                mail = "veli@gmail.com",
+                price = 78.90,
+                date = DateTime.Now,
+                note = "İçinde hediye paketi de istiyorum.",
+                address = "Sincan/ANKARA",
+                province = "Ankara",
+                country = "TÜRKİYE"
+             };
+           
+            SiparisDetay sd = new SiparisDetay();
+            sd.siparis = s;
+
+            var u = new List<Urun>()
+            {
+                new Urun(){name="Çilek Reçeli", price=19.9, quantity=5}
+            };
+            sd.urunler = u;
+
+            return View(sd);
         }
         public IActionResult SiparisOnayla()
         {
