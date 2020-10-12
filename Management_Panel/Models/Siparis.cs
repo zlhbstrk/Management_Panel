@@ -18,5 +18,6 @@ namespace Management_Panel.Models
         public double price { get; set; }
         public DateTime date { get; set; }
         public string note { get; set; }
+        public bool status { get; set; }
     }
 }

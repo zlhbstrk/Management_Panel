@@ -71,16 +71,34 @@
                     </tbody>
                     <th>Toplam Fiyat: @Model.siparis.price</th>
                 </table>
-                @*<button type="button" class="btn btn-block btn-info waves-effect waves-classic" style="width:100px;">Sipariş Onayla</button>*@
-                <form action="SiparisOnayla.cshtml">
-                    <label for="onay">Sipariş Onayla: </label>
-                    <input type="checkbox" id="onay" />
+                <form action="SiparisOnayla">
+                    @{
+                        if (@Model.siparis.status)
+                        {
+                            <label for="onay">Sipariş Onayla: </label>
+                            <input type="checkbox" id="onay" readonly="true" checked="true" />
+                        }
+                        else
+                        {
+                            <label for="onay">Sipariş Onayla: </label>
+                            <input type="checkbox" id="onay" checked="false" />
+                        }
+                    }
                 </form>
-                <form action="KargoBilgisiGir.cshtml">
+                <form action="KargoBilgisiGir">
                     <label for="kargoTakip">Kargo Takip No: </label>
                     <input type="text" id="fname" name="kargoTakip" align="right" />
+                    <input type="submit" value="Kaydet" class="btn-block btn-info form-control" style="width:100px;"/>
                 </form>
             </div>
         </div>
     </div>
 </div>
+@*<script>
+
+        $(document).ready(function () {
+            $("input[type=checkbox]").click(function () {
+                alert("state changed");
+            });
+        });
+    </script>*@

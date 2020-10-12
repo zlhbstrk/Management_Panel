@@ -1,8 +1,45 @@
-﻿
+﻿@model Management_Panel.Models.Urun
 @{
     ViewData["Title"] = "UrunEkle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>UrunEkle</h2>
-
+<h4>@ViewBag.Sonuc</h4> @*mesaj-alert*@
+<div class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions"></div>
+        <h3 class="panel-title">Ürün Ekle</h3>
+    </header>
+    <div class="panel-body">
+        <form action="/Urun/UrunEkle" method="post">
+            <div class="row">
+                <div class="col-md-3">Ad: </div>
+                <div class="col-md-3"><input type="text" name="name" placeholder="Ürün adını giriniz." class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3"><label for="description">Açıklama: </label> </div>
+                <div class="col-md-3">  <textarea id="description" name ="description" rows="5" placeholder="Ürün açıklamasını giriniz." class="form-control"></textarea></div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3">Fiyat: </div>
+                <div class="col-md-3"><input type="text" name="price" placeholder="Ürün fiyatı giriniz." class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3">Resim: </div>
+                <div class="col-md-3"><input type="file" name="image" class="form-control" /> </div>
+            </div><div class="row" style="margin-top:15px">
+                <div class="col-md-3">Stok Durumu: </div>
+                <div class="col-md-3"><input type="text" name="isStock" placeholder="Ürün stok durumunu giriniz." class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3">Miktar: </div>
+                <div class="col-md-3"><input type="text" name="quantity" placeholder="Ürün miktarını giriniz." class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                <input type="submit" value="Kaydet" class="btn-block btn-info form-control" /> 
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

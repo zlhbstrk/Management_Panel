@@ -21,18 +21,32 @@ namespace Management_Panel.Controllers
             };
             return View(urun);
         }
+        
+        [HttpGet]
         public IActionResult UrunEkle()
         {
+            @ViewBag.Sonuc = "";
             return View();
         }
+
+        [HttpPost]
+        public IActionResult UrunEkle(Urun eklenenUrun)
+        {
+            //eklenenUrun nesnesi servise gönderilir.
+            ViewBag.Sonuc = eklenenUrun.name + " Ürünü eklendi.";
+            return View();
+        }
+
         public IActionResult UrunSil()
         {
             return View();
         }
+
         public IActionResult AskiyaAl()
         {
             return View();
         }
+
         public IActionResult UrunGuncelle()
         {
             return View();

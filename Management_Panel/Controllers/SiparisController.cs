@@ -33,7 +33,8 @@ namespace Management_Panel.Controllers
                 note = "İçinde hediye paketi de istiyorum.",
                 address = "Sincan/ANKARA",
                 province = "Ankara",
-                country = "TÜRKİYE"
+                country = "TÜRKİYE",
+                status = true
              };
            
             SiparisDetay sd = new SiparisDetay();
