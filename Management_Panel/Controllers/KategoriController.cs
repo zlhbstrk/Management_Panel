@@ -20,8 +20,19 @@ namespace Management_Panel.Controllers
 
             return View(kategori);
         }
+
+        [HttpGet]
         public IActionResult KategoriEkle()
         {
+            @ViewBag.S = "";
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult KategoriEkle(Kategori eklenenKategori)
+        {
+            //eklenenKategori nesnesi servise gönderilir.
+            ViewBag.S = eklenenKategori.name + " Kategori eklendi.";
             return View();
         }
     }

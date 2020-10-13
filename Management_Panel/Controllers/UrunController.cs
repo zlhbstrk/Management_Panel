@@ -50,7 +50,7 @@ namespace Management_Panel.Controllers
 
         public IActionResult UrunGuncelle(int id)
         {
-            //idyi apiye gönder // ürün bilgiileri
+            //id ile ürün bilgileri servise gönderilir
             //apiden model alınır ve view gönderilir
             
             return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });

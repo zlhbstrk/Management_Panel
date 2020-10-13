@@ -71,26 +71,24 @@
                     </tbody>
                     <th>Toplam Fiyat: @Model.siparis.price</th>
                 </table>
-                <form action="SiparisOnayla">
+                <form action="SiparisOnayla"> @*post metodu ekleyecek miyiz?*@
                     @{
                         if (@Model.siparis.status)
                         {
                             <label for="onay">Sipariş Onayla: </label>
-                            <input type="checkbox" id="onay" readonly="true" checked="true" />
+                            <input type="checkbox" id="onay" readonly checked/>
                         }
                         else
                         {
                             <label for="onay">Sipariş Onayla: </label>
-                            <input type="checkbox" id="onay" checked="false" />
+                            <input type="checkbox" id="onay"/>
                         }
                     }
                 </form>
-                <form action="KargoBilgisiGir">
+                <form action="KargoBilgisiGir"> @*post metodu ekleyecek miyiz?*@
                     <label for="kargoTakip">Kargo Takip No: </label>
-                    <input type="text" id="fname" name="kargoTakip" align="right" placeholder="Kargo takip no giriniz." />
-                    <div class="col-md-3">
-                        <input type="submit" value="Kaydet" class="btn-block btn-info form-control" style="width:100px;" />
-                    </div>
+                    <input type="text" id="fname" name="kargoTakip" placeholder="Kargo takip no giriniz." class="form-control"/>
+                    <input type="submit" value="Kaydet" class="btn-block btn-info form-control" style="width:100px;"/>
                 </form>
             </div>
         </div>
