@@ -20,6 +20,7 @@
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 100px;" aria-label="Price: activate to sort column ascending">Fiyat</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70px;" aria-label="Quantity: activate to sort column ascending">Miktar</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Stock: activate to sort column ascending">Stok Durumu</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 110px;" aria-label="Stock: activate to sort column ascending">Faaliyet Durumu</th>
                                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 30px;" aria-label="Image: activate to sort column ascending">Resim</th>
                                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 30px;">Sil</th>
                                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 30px;">Güncelle</th>
@@ -32,6 +33,7 @@
                                 <th rowspan="1" colspan="1">Fiyat</th>
                                 <th rowspan="1" colspan="1">Mitar</th>
                                 <th rowspan="1" colspan="1">Stok Durumu</th>
+                                <th rowspan="1" colspan="1">Faaliyet Durumu</th>
                                 <th rowspan="1" colspan="1">Resim</th>
                                 <th rowspan="1" colspan="1">Sil</th>
                                 <th rowspan="1" colspan="1">Güncelle</th>
@@ -41,16 +43,17 @@
                         <tbody>
                             @foreach (var u in Model)
                             {
-                                <tr>
-                                    <td>@u.name</td>
-                                    <td>@u.price</td>
-                                    <td>@u.quantity</td>
-                                    <td>@u.isStock</td>
-                                    <td>@u.image</td>
-                                    <td><button type="button" onclick="location.href='UrunSil'" class="btn btn-block btn-info waves-effect waves-classic" style="width:30px;">Sil</button></td>
-                                    <td><button type="submit" onclick="location.href='UrunGuncelle'" class="btn btn-block btn-info waves-effect waves-classic" style="width:50px;">Güncelle</button></td>
-                                    <td><button type="button" onclick="location.href='AskiyaAl'" class="btn btn-block btn-info waves-effect waves-classic" style="width:60px;">Askıya Al</button></td>
-                                </tr>
+                            <tr>
+                                <td>@u.name</td>
+                                <td>@u.price</td>
+                                <td>@u.quantity</td>
+                                <td>@u.isStock</td>
+                                <td>@u.status</td>
+                                <td>@u.image</td>
+                                <td><a href="/Urun/UrunSil/@u.id" style="width:30px; color:red;"><i class="fa fa-remove"></i></a></td>
+                                <td><a href="/Urun/UrunGuncelle/@u.id" style="width:50px; color:limegreen"><i class="fa fa-edit"></i></a></td>
+                                <td><a href="/Urun/AskiyaAl/@u.id" style="width:50px; color:saddlebrown"><i class="fa fa-repeat"></i></a></td>
+                            </tr>
                             }
                         </tbody>
                     </table>

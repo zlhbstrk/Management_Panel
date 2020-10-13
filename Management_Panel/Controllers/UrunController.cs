@@ -14,10 +14,10 @@ namespace Management_Panel.Controllers
         {
             var urun = new List<Urun>()
             {
-                new Urun(){id=1, name="Kuru İncir Reçeli", price=20.9, image="local/img", isStock=true, quantity=5},
-                new Urun(){id=2, name="Ceviz Reçeli", price=29.9, image="local/img", isStock=true, quantity=2},
-                new Urun(){id=3, name="Domates Salçası", price=15.0, image="local/img", isStock=false, quantity=0},
-                new Urun(){id=4, name="Biber Salçası", price=30.9, image="local/img", isStock=true, quantity=10}
+                new Urun(){id=1, name="Kuru İncir Reçeli", price=20.9, image="local/img", isStock=true, quantity=5, status=true},
+                new Urun(){id=2, name="Ceviz Reçeli", price=29.9, image="local/img", isStock=true, quantity=2, status=true},
+                new Urun(){id=3, name="Domates Salçası", price=15.0, image="local/img", isStock=false, quantity=0, status=true},
+                new Urun(){id=4, name="Biber Salçası", price=30.9, image="local/img", isStock=true, quantity=10, status=false}
             };
             return View(urun);
         }
@@ -37,19 +37,23 @@ namespace Management_Panel.Controllers
             return View();
         }
 
-        public IActionResult UrunSil()
+        public IActionResult UrunSil(int id)
         {
-            return View();
+            //id servisteki ürün silme fonksiyonuna gönderilir.
+            return RedirectToAction("UrunListele");
         }
 
-        public IActionResult AskiyaAl()
+        public IActionResult AskiyaAl(int id)
         {
-            return View();
+            return RedirectToAction("UrunListele");
         }
 
-        public IActionResult UrunGuncelle()
+        public IActionResult UrunGuncelle(int id)
         {
-            return View();
+            //idyi apiye gönder // ürün bilgiileri
+            //apiden model alınır ve view gönderilir
+            
+            return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });
         }
     }
 }
