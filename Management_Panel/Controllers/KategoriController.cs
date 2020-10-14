@@ -16,6 +16,7 @@ namespace Management_Panel.Controllers
                 new Kategori(){id=1, name="Reçel", refName=""},
                 new Kategori(){id=2, name="Tarhana", refName="Unlu Mamüller"},
                 new Kategori(){id=3, name="Salça", refName=""},
+                new Kategori(){id=4, name="Unlu Mamüller", refName=""}
             };
 
             return View(kategori);
@@ -25,7 +26,14 @@ namespace Management_Panel.Controllers
         public IActionResult KategoriEkle()
         {
             @ViewBag.Sonuc = "";
-            return View();
+            var kategori = new List<Kategori>()
+            {
+                new Kategori(){id=1, name="Reçel"},
+                new Kategori(){id=3, name="Salça"},
+                new Kategori(){id=4, name="Unlu Mamüller"}
+            };
+
+            return View(kategori); 
         }
 
         [HttpPost]

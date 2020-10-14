@@ -26,11 +26,12 @@
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Üst Kategori Ad: </div>
                 <div class="col-md-3">
-                    @*<input type="text" name="refName" placeholder="Üst kategori adını giriniz." class="form-control" />*@
                     <select name="refName" class="form-control">
                         <option value="yok">Yok</option>
-                        @*@//forewach  alınır*@
-                        <option value="unluMamul">Unlu Mamüller</option>
+                        @foreach (var k in Model)
+                        {
+                            <option value="@k.id">@k.name</option>
+                        }
                     </select>
                 </div>
             </div>
