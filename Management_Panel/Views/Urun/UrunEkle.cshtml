@@ -3,10 +3,11 @@
     ViewData["Title"] = "UrunEkle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (ViewBag.Sonuc != "")
+
+@if (ViewBag.Eklenen != "")
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>@ViewBag.Sonuc Ürün başarıyla eklendi!</strong>
+        <strong>@ViewBag.Eklenen ürünü başarıyla eklendi!</strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -41,11 +42,6 @@
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Miktar: </div>
                 <div class="col-md-3"><input type="text" name="quantity" placeholder="Ürün miktarını giriniz." class="form-control" /> </div>
-            </div>
-            <div class="row" style="margin-top:15px">
-                <div class="col-md-3"><label for="onay">Faaliyet Durumu: </label></div>
-                <div><input type="radio" id="status" name="status" value="satista" checked> Satışta </div>
-                <div><input type="radio" id="status" name="status" value="askida"> Askıda </div>
             </div>
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3"></div>

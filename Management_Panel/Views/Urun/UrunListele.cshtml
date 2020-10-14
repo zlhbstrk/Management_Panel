@@ -4,6 +4,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (ViewBag.SonucSilinen)
+{
+    @if (ViewBag.Silinen != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.Silinen id'li ürün başarıyla silindi!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.Silinen id'li ürün silinemedi!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+}
+
+@if (ViewBag.SonucAskiyaAl)
+{
+    @if (ViewBag.AskiyaAl != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.AskiyaAl id'li ürün başarıyla askıya alındı!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.AskiyaAl id'li ürün askıya alınamadı!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+}
+
 <div class="panel">
     <header class="panel-heading">
         <div class="panel-actions"></div>
@@ -43,17 +87,17 @@
                         <tbody>
                             @foreach (var u in Model)
                             {
-                            <tr>
-                                <td>@u.name</td>
-                                <td>@u.price</td>
-                                <td>@u.quantity</td>
-                                <td>@u.isStock</td>
-                                <td>@u.status</td>
-                                <td>@u.image</td>
-                                <td><a href="/Urun/UrunSil/@u.id" style="width:30px; color:red;"><i class="fa fa-remove"></i></a></td>
-                                <td><a href="/Urun/UrunGuncelle/@u.id" style="width:50px; color:limegreen"><i class="fa fa-edit"></i></a></td>
-                                <td><a href="/Urun/AskiyaAl/@u.id" style="width:50px; color:saddlebrown"><i class="fa fa-repeat"></i></a></td>
-                            </tr>
+                                <tr>
+                                    <td>@u.name</td>
+                                    <td>@u.price</td>
+                                    <td>@u.quantity</td>
+                                    <td>@u.isStock</td>
+                                    <td>@u.status</td>
+                                    <td>@u.image</td>
+                                    <td><a href="/Urun/UrunSil/@u.id" style="width:30px; color:red;"><i class="fa fa-remove"></i></a></td>
+                                    <td><a href="/Urun/UrunGuncelle/@u.id" style="width:50px; color:limegreen"><i class="fa fa-edit"></i></a></td>
+                                    <td><a href="/Urun/AskiyaAl/@u.id" style="width:50px; color:saddlebrown"><i class="fa fa-repeat"></i></a></td>
+                                </tr>
                             }
                         </tbody>
                     </table>
