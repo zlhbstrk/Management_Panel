@@ -24,7 +24,7 @@ namespace Management_Panel.Controllers
         [HttpGet]
         public IActionResult KategoriEkle()
         {
-            @ViewBag.S = "";
+            @ViewBag.Sonuc = "";
             return View();
         }
 
@@ -32,7 +32,7 @@ namespace Management_Panel.Controllers
         public IActionResult KategoriEkle(Kategori eklenenKategori)
         {
             //eklenenKategori nesnesi servise gönderilir.
-            ViewBag.S = eklenenKategori.name + " Kategori eklendi.";
+            ViewBag.Sonuc = eklenenKategori.name;
             return View();
         }
     }

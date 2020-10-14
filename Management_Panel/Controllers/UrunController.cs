@@ -33,13 +33,26 @@ namespace Management_Panel.Controllers
         public IActionResult UrunEkle(Urun eklenenUrun)
         {
             //eklenenUrun nesnesi servise gönderilir.
-            ViewBag.Sonuc = eklenenUrun.name + " Ürünü eklendi.";
+            ViewBag.Sonuc = eklenenUrun.name;
             return View();
         }
 
         public IActionResult UrunSil(int id)
         {
             //id servisteki ürün silme fonksiyonuna gönderilir.
+            bool sonuc = true;
+
+            if (sonuc)
+            {
+
+            }
+            else
+            {
+
+            }
+
+
+
             return RedirectToAction("UrunListele");
         }
 
