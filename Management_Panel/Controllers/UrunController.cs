@@ -41,6 +41,9 @@ namespace Management_Panel.Controllers
                 ViewBag.SonucAskiyaAl = true;
                 ViewBag.AskiyaAl = TempData["AskiyaAl"];
             }
+
+
+
             return View(urun);
         }
 
@@ -76,12 +79,22 @@ namespace Management_Panel.Controllers
             return RedirectToAction("UrunListele");
         }
 
+        [HttpGet]
+        [Route("Urun/UrunGuncelle/{id}")]
         public IActionResult UrunGuncelle(int id)
         {
             //id ile ürün bilgileri servise gönderilir
             //apiden model alınır ve view gönderilir
+            return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", description="aa", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });
+        }
 
-            return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });
+        [HttpPost]
+        public IActionResult UrunGuncelle(Urun guncellenenUrun)
+        {
+            //id ile ürün bilgileri servise gönderilir
+            //apiden model alınır ve view gönderilir
+            ViewBag.Guncellenen = guncellenenUrun.name;
+            return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", description = "aa", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });
         }
     }
 }

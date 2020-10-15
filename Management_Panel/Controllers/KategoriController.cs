@@ -39,9 +39,16 @@ namespace Management_Panel.Controllers
         [HttpPost]
         public IActionResult KategoriEkle(Kategori eklenenKategori)
         {
-            //eklenenKategori nesnesi servise gönderilir.
             ViewBag.Sonuc = eklenenKategori.name;
-            return View();
+            //eklenenKategori nesnesi servise gönderilir.
+            var kategori = new List<Kategori>()
+            {
+                new Kategori(){id=1, name="Reçel"},
+                new Kategori(){id=3, name="Salça"},
+                new Kategori(){id=4, name="Unlu Mamüller"}
+            };
+
+            return View(kategori);
         }
     }
 }

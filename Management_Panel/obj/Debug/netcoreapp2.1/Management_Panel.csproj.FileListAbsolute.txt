@@ -55,7 +55,6 @@ C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\SiparisListele.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\SiparisDetay.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\SiparisOnayla.cshtml.g.cs
-C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Siparis\KargoBilgisiGir.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunListele.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunEkle.cshtml.g.cs
 C:\Users\zlhbs\Desktop\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Razor\Views\Urun\UrunGuncelle.cshtml.g.cs

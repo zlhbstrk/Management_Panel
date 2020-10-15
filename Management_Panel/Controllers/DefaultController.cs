@@ -10,6 +10,9 @@ namespace Management_Panel.Controllers
     {
         public IActionResult Index()
         {
+
+            //sipariş ürün kullanıcı sayıları db den apiden glecek 
+
             return View();
         }
     }

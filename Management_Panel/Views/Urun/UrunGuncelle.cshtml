@@ -1,8 +1,55 @@
-﻿
+﻿@model Management_Panel.Models.Urun
 @{
     ViewData["Title"] = "Guncelle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UrunGuncelle</h2>
-
+@if (ViewBag.Guncellenen != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@ViewBag.Guncellenen ürünü başarıyla güncellendi!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<div class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions"></div>
+        <h3 class="panel-title">Ürün Güncelle</h3>
+    </header>
+    <div class="panel-body">
+        <form action="/Urun/UrunGuncelle" method="post">
+            <div class="row">
+                <div class="col-md-3">Ad: </div>
+                <div class="col-md-3"><input type="text" name="name" value="@Model.name" class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3"><label for="description">Açıklama: </label> </div>
+                <div class="col-md-3">  <textarea id="description" name="description" rows ="5" class="form-control">@Model.description</textarea></div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3">Fiyat: </div>
+                <div class="col-md-3"><input type="text" name="price" value="@Model.price" class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3">Resim: </div>
+                <div class="col-md-3"><input type="file" name="image" class="form-control" /> </div>
+            </div><div class="row" style="margin-top:15px">
+                <div class="col-md-3">Stok Durumu: </div>
+                <div class="col-md-3"><input type="text" name="isStock" value="@Model.isStock.ToString()" class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3">Miktar: </div>
+                <div class="col-md-3"><input type="text" name="quantity" value="@Model.quantity" class="form-control" /> </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <input type="submit" value="Kaydet" class="btn-block btn-info form-control" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<img src="./assets/images/@Model.image" />
