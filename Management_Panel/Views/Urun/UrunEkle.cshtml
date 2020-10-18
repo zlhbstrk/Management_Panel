@@ -1,5 +1,4 @@
-﻿@model Management_Panel.Models.Urun
-@{
+﻿@{
     ViewData["Title"] = "UrunEkle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -22,7 +21,7 @@
         <form action="/Urun/UrunEkle" method="post">
             <div class="row">
                 <div class="col-md-3">Ad: </div>
-                <div class="col-md-3"><input type="text" name="name" placeholder="Ürün adını giriniz." class="form-control"/> </div>
+                <div class="col-md-3"><input type="text" name="name" placeholder="Ürün adını giriniz." class="form-control" /> </div>
             </div>
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3"><label for="description">Açıklama: </label> </div>
@@ -35,9 +34,15 @@
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Resim: </div>
                 <div class="col-md-3"><input type="file" name="image" class="form-control" /> </div>
-            </div><div class="row" style="margin-top:15px">
+            </div>
+            <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Stok Durumu: </div>
-                <div class="col-md-3"><input type="text" name="isStock" placeholder="Ürün stok durumunu giriniz." class="form-control" /> </div>
+                <div class="col-md-3">
+                    <select name="isStock" class="form-control">
+                        <option value="1" selected>Var</option>
+                        <option value="0">Yok</option>
+                    </select>
+                </div>
             </div>
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Miktar: </div>
