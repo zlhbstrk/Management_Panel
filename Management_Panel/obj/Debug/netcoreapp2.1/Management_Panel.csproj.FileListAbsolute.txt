@@ -72,7 +72,6 @@ C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Pan
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csprojAssemblyReference.cache
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.AssemblyInfoInputs.cache
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.AssemblyInfo.cs
-C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csproj.CoreCompileInputs.cache
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorAssemblyInfo.cache
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.RazorAssemblyInfo.cs
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.TagHelpers.input.cache
@@ -98,3 +97,4 @@ C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Pan
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.pdb
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.genruntimeconfig.cache
 C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csproj.CopyComplete
+C:\Users\Harun Demir\Desktop\balbocegigida_panel\Management_Panel\Management_Panel\obj\Debug\netcoreapp2.1\Management_Panel.csproj.CoreCompileInputs.cache

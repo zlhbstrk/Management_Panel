@@ -5,22 +5,29 @@ using System.Threading.Tasks;
 using Management_Panel.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Runtime.Serialization.Json;
+using System.Text.Json;
+using System.Text;
 
 namespace Management_Panel.Controllers
 {
     public class UrunController : Controller
     {
-        public IActionResult UrunListele()
+        private static readonly HttpClient client = new HttpClient();
+        public async Task<IActionResult> UrunListele()
         {
-            var urun = new List<Urun>()
-            {
-                new Urun(){id=1, name="Kuru İncir Reçeli", price=20.9, image="local/img", isStock=true, quantity=5, status=true},
-                new Urun(){id=2, name="Ceviz Reçeli", price=29.9, image="local/img", isStock=true, quantity=2, status=true},
-                new Urun(){id=3, name="Domates Salçası", price=15.0, image="local/img", isStock=false, quantity=0, status=true},
-                new Urun(){id=4, name="Biber Salçası", price=30.9, image="local/img", isStock=true, quantity=10, status=false}
-            };
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            if (TempData["Silinen"]==null)
+            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44374/api/Products");
+
+            var urunler = await JsonSerializer.DeserializeAsync<List<Urun>>(await streamTask.Content.ReadAsStreamAsync());
+
+            if (TempData["Silinen"] == null)
             {
                 ViewBag.SonucSilinen = false;
                 ViewBag.Silinen = null;
@@ -42,9 +49,7 @@ namespace Management_Panel.Controllers
                 ViewBag.AskiyaAl = TempData["AskiyaAl"];
             }
 
-
-
-            return View(urun);
+            return View(urunler);
         }
 
         [HttpGet]
@@ -55,46 +60,97 @@ namespace Management_Panel.Controllers
         }
 
         [HttpPost]
-        public IActionResult UrunEkle(Urun eklenenUrun)
+        public async Task<IActionResult> UrunEkle(Urun eklenenUrun)
         {
-            //eklenenUrun nesnesi servise gönderilir.
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+            HttpResponseMessage streamTask = await client.PostAsync("https://localhost:44374/api/Products/", new StringContent(JsonSerializer.Serialize(eklenenUrun), Encoding.UTF8, "application/json"));
+
             ViewBag.Eklenen = eklenenUrun.name;
             return View();
         }
 
         [HttpGet]
         [Route("Urun/UrunSil/{id}")]
-        public IActionResult UrunSil(int id)
+        public async Task<IActionResult> UrunSil(int id)
         {
-            //id servisteki ürün silme fonksiyonuna gönderilir.
-            TempData["Silinen"] = id.ToString();
+            if (id != 0)
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+                HttpResponseMessage streamTask = await client.DeleteAsync("https://localhost:44374/api/Products/" + id);
+
+                var urunler = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
+
+                TempData["Silinen"] = urunler.name;
+                return RedirectToAction("UrunListele");
+            }
+
             return RedirectToAction("UrunListele");
+
         }
 
         [HttpGet]
         [Route("Urun/AskiyaAl/{id}")]
-        public IActionResult AskiyaAl(int id)
+        public async Task<IActionResult> AskiyaAl(int id)
         {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+            HttpResponseMessage streamTask = await client.PutAsync("https://localhost:44374/api/Products/AskiyaAl/" + id, new StringContent(JsonSerializer.Serialize(new { Status = false }), Encoding.UTF8, "application/json"));
+
+            var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
+
             TempData["AskiyaAl"] = id.ToString();
             return RedirectToAction("UrunListele");
         }
 
         [HttpGet]
         [Route("Urun/UrunGuncelle/{id}")]
-        public IActionResult UrunGuncelle(int id)
+        public async Task<IActionResult> UrunGuncelle(int id)
         {
-            //id ile ürün bilgileri servise gönderilir
-            //apiden model alınır ve view gönderilir
-            return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", description="aa", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44374/api/Products/" + id);
+
+            var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
+
+            return View(urun);
         }
 
         [HttpPost]
-        public IActionResult UrunGuncelle(Urun guncellenenUrun)
+        public async Task<IActionResult> UrunGuncelle(Urun guncellenenUrun)
         {
-            //id ile ürün bilgileri servise gönderilir
-            //apiden model alınır ve view gönderilir
+            if (guncellenenUrun != null)
+            {
+                if (guncellenenUrun.id != 0)
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                    client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+                    HttpResponseMessage streamTask = await client.PutAsync("https://localhost:44374/api/Products/" + guncellenenUrun.id, new StringContent(JsonSerializer.Serialize(guncellenenUrun), Encoding.UTF8, "application/json"));
+
+                    var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
+
+                    ViewBag.Guncellenen = guncellenenUrun.name;
+                    return View(guncellenenUrun);
+                }
+            }
             ViewBag.Guncellenen = guncellenenUrun.name;
-            return View(new Urun() { id = 1, name = "Kuru İncir Reçeli", description = "aa", price = 20.9, image = "local/img", isStock = true, quantity = 5, status = true });
+            return View(guncellenenUrun);
         }
     }
 }
