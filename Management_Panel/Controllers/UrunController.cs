@@ -23,7 +23,7 @@ namespace Management_Panel.Controllers
                 new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44374/api/Products");
+            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44363/api/Products");
 
             var urunler = await JsonSerializer.DeserializeAsync<List<Urun>>(await streamTask.Content.ReadAsStreamAsync());
 
@@ -67,7 +67,7 @@ namespace Management_Panel.Controllers
                 new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            HttpResponseMessage streamTask = await client.PostAsync("https://localhost:44374/api/Products/", new StringContent(JsonSerializer.Serialize(eklenenUrun), Encoding.UTF8, "application/json"));
+            HttpResponseMessage streamTask = await client.PostAsync("https://localhost:44363/api/Products/", new StringContent(JsonSerializer.Serialize(eklenenUrun), Encoding.UTF8, "application/json"));
 
             ViewBag.Eklenen = eklenenUrun.name;
             return View();
@@ -84,7 +84,7 @@ namespace Management_Panel.Controllers
                     new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
                 client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-                HttpResponseMessage streamTask = await client.DeleteAsync("https://localhost:44374/api/Products/" + id);
+                HttpResponseMessage streamTask = await client.DeleteAsync("https://localhost:44363/api/Products/" + id);
 
                 var urunler = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
 
@@ -105,7 +105,7 @@ namespace Management_Panel.Controllers
                 new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            HttpResponseMessage streamTask = await client.PutAsync("https://localhost:44374/api/Products/AskiyaAl/" + id, new StringContent(JsonSerializer.Serialize(new { Status = false }), Encoding.UTF8, "application/json"));
+            HttpResponseMessage streamTask = await client.PutAsync("https://localhost:44363/api/Products/AskiyaAl/" + id, new StringContent(JsonSerializer.Serialize(new { Status = false }), Encoding.UTF8, "application/json"));
 
             var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
 
@@ -122,7 +122,7 @@ namespace Management_Panel.Controllers
                 new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44374/api/Products/" + id);
+            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44363/api/Products/" + id);
 
             var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
 
@@ -141,12 +141,12 @@ namespace Management_Panel.Controllers
                         new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
                     client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-                    HttpResponseMessage streamTask = await client.PutAsync("https://localhost:44374/api/Products/" + guncellenenUrun.id, new StringContent(JsonSerializer.Serialize(guncellenenUrun), Encoding.UTF8, "application/json"));
+                    HttpResponseMessage streamTask = await client.PutAsync("https://localhost:44363/api/Products/" + guncellenenUrun.id, new StringContent(JsonSerializer.Serialize(guncellenenUrun), Encoding.UTF8, "application/json"));
 
                     var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
 
                     ViewBag.Guncellenen = guncellenenUrun.name;
-                    return View(guncellenenUrun);
+                    return View(urun);
                 }
             }
             ViewBag.Guncellenen = guncellenenUrun.name;

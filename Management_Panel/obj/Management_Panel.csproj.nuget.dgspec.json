@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Harun Demir\\Desktop\\balbocegigida_panel\\Management_Panel\\Management_Panel\\Management_Panel.csproj": {}
+    "C:\\Users\\zlhbs\\Desktop\\Management_Panel\\Management_Panel\\Management_Panel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Harun Demir\\Desktop\\balbocegigida_panel\\Management_Panel\\Management_Panel\\Management_Panel.csproj": {
+    "C:\\Users\\zlhbs\\Desktop\\Management_Panel\\Management_Panel\\Management_Panel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Harun Demir\\Desktop\\balbocegigida_panel\\Management_Panel\\Management_Panel\\Management_Panel.csproj",
+        "projectUniqueName": "C:\\Users\\zlhbs\\Desktop\\Management_Panel\\Management_Panel\\Management_Panel.csproj",
         "projectName": "Management_Panel",
-        "projectPath": "C:\\Users\\Harun Demir\\Desktop\\balbocegigida_panel\\Management_Panel\\Management_Panel\\Management_Panel.csproj",
-        "packagesPath": "C:\\Users\\Harun Demir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Harun Demir\\Desktop\\balbocegigida_panel\\Management_Panel\\Management_Panel\\obj\\",
+        "projectPath": "C:\\Users\\zlhbs\\Desktop\\Management_Panel\\Management_Panel\\Management_Panel.csproj",
+        "packagesPath": "C:\\Users\\zlhbs\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zlhbs\\Desktop\\Management_Panel\\Management_Panel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Harun Demir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zlhbs\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
