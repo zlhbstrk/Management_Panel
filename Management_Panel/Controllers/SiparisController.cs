@@ -42,7 +42,7 @@ namespace Management_Panel.Controllers
 
             var u = new List<Urun>()
             {
-                new Urun(){name="Çilek Reçeli", price=19.9, quantity=5}
+                new Urun(){name="Çilek Reçeli", price=19, quantity=5}
             };
             sd.urunler = u;
 

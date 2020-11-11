@@ -4,51 +4,89 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Management_Panel.Models;
+using System.Net.Http;
+using System.Text.Json;
+using System.Net.Http.Headers;
+using System.Text;
 
 namespace Management_Panel.Controllers
 {
     public class KategoriController : Controller
     {
-        public IActionResult KategoriListele()
-        {
-            var kategori = new List<Kategori>()
-            {
-                new Kategori(){id=1, name="Reçel", refName=""},
-                new Kategori(){id=2, name="Tarhana", refName="Unlu Mamüller"},
-                new Kategori(){id=3, name="Salça", refName=""},
-                new Kategori(){id=4, name="Unlu Mamüller", refName=""}
-            };
+        private static readonly HttpClient client = new HttpClient();
 
-            return View(kategori);
+        public async Task<IActionResult> KategoriListele()
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44363/api/Category");
+
+            var kategoriler = await JsonSerializer.DeserializeAsync<List<Kategori>>(await streamTask.Content.ReadAsStreamAsync());
+
+            return View(kategoriler);
         }
 
         [HttpGet]
         public IActionResult KategoriEkle()
         {
-            @ViewBag.Sonuc = "";
-            var kategori = new List<Kategori>()
-            {
-                new Kategori(){id=1, name="Reçel"},
-                new Kategori(){id=3, name="Salça"},
-                new Kategori(){id=4, name="Unlu Mamüller"}
-            };
-
-            return View(kategori); 
+            @ViewBag.Eklenen = "";
+            return View();
         }
 
         [HttpPost]
-        public IActionResult KategoriEkle(Kategori eklenenKategori)
+        public async Task<IActionResult> KategoriEkle(Kategori eklenenKategori)
         {
-            ViewBag.Sonuc = eklenenKategori.name;
-            //eklenenKategori nesnesi servise gönderilir.
-            var kategori = new List<Kategori>()
-            {
-                new Kategori(){id=1, name="Reçel"},
-                new Kategori(){id=3, name="Salça"},
-                new Kategori(){id=4, name="Unlu Mamüller"}
-            };
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            return View(kategori);
+            HttpResponseMessage streamTask = await client.PostAsync("https://localhost:44363/api/Category/", new StringContent(JsonSerializer.Serialize(eklenenKategori), Encoding.UTF8, "application/json"));
+
+            ViewBag.Eklenen = eklenenKategori.name;
+            return View();
         }
+
+        [HttpGet]
+        [Route("Kategori/KategoriSil/{id}")]
+        public async Task<IActionResult> KategoriSil(int id)
+        {
+            if (id != 0)
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+                HttpResponseMessage streamTask = await client.DeleteAsync("https://localhost:44363/api/Category/" + id);
+
+                var kategoriler = await JsonSerializer.DeserializeAsync<Kategori>(await streamTask.Content.ReadAsStreamAsync());
+
+                TempData["Silinen"] = kategoriler.name;
+                return RedirectToAction("KategoriListele");
+            }
+
+            return RedirectToAction("KategoriListele");
+        }
+
+        [HttpGet]
+        [Route("Kategori/KategoriGuncelle/{id}")]
+        public async Task<IActionResult> UrunGuncelle(int id)
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+            HttpResponseMessage streamTask = await client.GetAsync("https://localhost:44363/api/Products/" + id);
+
+            var urun = await JsonSerializer.DeserializeAsync<Urun>(await streamTask.Content.ReadAsStreamAsync());
+
+            return View(urun);
+        }
+
     }
 }

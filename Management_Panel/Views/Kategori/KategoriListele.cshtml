@@ -18,21 +18,27 @@
                             <tr role="row">
                                 <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 160px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">İsim</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 100px;" aria-label="Reference Name: activate to sort column ascending">Referans İsim</th>
+                                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 30px;">Sil</th>
+                                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 30px;">Güncelle</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th rowspan="1" colspan="1">İsim</th>
                                 <th rowspan="1" colspan="1">Referans İsim</th>
+                                <th rowspan="1" colspan="1">Sil</th>
+                                <th rowspan="1" colspan="1">Güncelle</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach (var k in Model)
                             {
-                                <tr>
-                                    <td>@k.name</td>
-                                    <td>@k.refName</td>
-                                </tr>
+                            <tr>
+                                <td>@k.name</td>
+                                <td>@k.refName</td>
+                                <td style="text-align: center;"><a href="/Kategori/KategoriSil/@k.id" style="width:30px; color:red;"><i class="fa fa-remove"></i></a></td>
+                                <td style="text-align: center;"><a href="/Kategori/KategoriGuncelle/@k.id" style="width:50px; color:limegreen"><i class="fa fa-edit"></i></a></td>
+                            </tr>
                             }
                         </tbody>
                     </table>

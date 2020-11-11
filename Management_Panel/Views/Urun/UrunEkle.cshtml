@@ -1,16 +1,29 @@
 ﻿@{
     ViewData["Title"] = "UrunEkle";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
-@if (ViewBag.Eklenen != "")
+    Management_Panel.Models.Result sonuc = (Management_Panel.Models.Result)TempData["result"];
+}
+@if (sonuc != null)
 {
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>@ViewBag.Eklenen ürünü başarıyla eklendi!</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+    @if (sonuc.result == true)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>@sonuc.message </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>@sonuc.message </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
 }
 <div class="panel">
     <header class="panel-heading">
@@ -29,7 +42,7 @@
             </div>
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Fiyat: </div>
-                <div class="col-md-3"><input type="text" name="price" placeholder="Ürün fiyatı giriniz." class="form-control" /> </div>
+                <div class="col-md-3"><input type="number" name="price" placeholder="Ürün fiyatı giriniz." class="form-control" /> </div>
             </div>
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Resim: </div>
@@ -39,15 +52,16 @@
                 <div class="col-md-3">Stok Durumu: </div>
                 <div class="col-md-3">
                     <select name="isStock" class="form-control">
-                        <option value="1" selected>Var</option>
-                        <option value="0">Yok</option>
+                        <option value="True" selected>Var</option>
+                        <option value="False">Yok</option>
                     </select>
                 </div>
             </div>
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3">Miktar: </div>
-                <div class="col-md-3"><input type="text" name="quantity" placeholder="Ürün miktarını giriniz." class="form-control" /> </div>
+                <div class="col-md-3"><input type="number" name="quantity" placeholder="Ürün miktarını giriniz." class="form-control" /> </div>
             </div>
+            @*<input type="hidden" value="True" name="status" />*@
             <div class="row" style="margin-top:15px">
                 <div class="col-md-3"></div>
                 <div class="col-md-3">

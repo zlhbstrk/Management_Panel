@@ -55,22 +55,57 @@ namespace Management_Panel.Controllers
         [HttpGet]
         public IActionResult UrunEkle()
         {
-            @ViewBag.Eklenen = "";
+            TempData["result"] = null;
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> UrunEkle(Urun eklenenUrun)
         {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+            try
+            {
 
-            HttpResponseMessage streamTask = await client.PostAsync("https://localhost:44363/api/Products/", new StringContent(JsonSerializer.Serialize(eklenenUrun), Encoding.UTF8, "application/json"));
+                eklenenUrun.status = true;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            ViewBag.Eklenen = eklenenUrun.name;
-            return View();
+                HttpResponseMessage streamTask = await client.PostAsync("https://localhost:44363/api/Products/", new StringContent(JsonSerializer.Serialize(eklenenUrun), Encoding.UTF8, "application/json"));
+
+                if (streamTask.IsSuccessStatusCode)
+                {
+                    Result result = new Result();
+                    result.result = true;
+                    result.message = eklenenUrun.name + " ürünü eklendi";
+                    result.value = eklenenUrun.name;
+
+                    TempData["result"] = result;
+                }
+                else
+                {
+                    Result result = new Result();
+                    result.result = false;
+                    result.message = eklenenUrun.name + " ürünü eklenemedi";
+                    result.value = eklenenUrun.name;
+
+                    TempData["result"] = result;
+                }
+
+                return View();
+
+            }
+            catch (Exception ex)
+            {
+                Result result = new Result();
+                result.result = false;
+                result.message = eklenenUrun.name + " ürünü eklenemedi";
+                result.value = eklenenUrun.name;
+
+                TempData["result"] = result;
+
+                return View();
+            }
         }
 
         [HttpGet]
