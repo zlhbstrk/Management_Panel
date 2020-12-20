@@ -15,5 +15,6 @@ namespace Management_Panel.Models
         public bool isStock { get; set; }
         public int quantity { get; set; }
         public bool status { get; set; }
+        public string unit { get; set; }
     }
 }

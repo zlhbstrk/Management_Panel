@@ -74,7 +74,7 @@ namespace Management_Panel.Controllers
 
         [HttpGet]
         [Route("Kategori/KategoriGuncelle/{id}")]
-        public async Task<IActionResult> UrunGuncelle(int id)
+        public async Task<IActionResult> KategoriGuncelle(int id)
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
